@@ -137,7 +137,9 @@ git checkout -b bugFix
 ### Пример.
 
 1. Две ветки, каждая содержит по одному уникальному коммиту.
+
 2. Это означает, что ни одна из веток не содержит полный набор "работ", выполненных в этом репозитории.
+
 3. Можно исправить эту ситуацию, выполнив слияние.
 
 <img width="420" height="393" alt="image" src="https://github.com/user-attachments/assets/202d34b6-d413-4d32-af0f-ad2a7251264f" />
@@ -240,7 +242,7 @@ git rebase main
 
 * изменения из bugFix находятся в конце ветки main и являют собой линейную последовательность коммитов.
 
-* С3' - это его "копия" в ветке main
+* С3' - это его "копия" в ветке main.
 
 + **Ветка main не обновлена до последних изменений**
 
@@ -256,6 +258,7 @@ git checkout main
 ```
 git rebase bugFix
 ```
+Результат:
 
 <img width="413" height="389" alt="image" src="https://github.com/user-attachments/assets/073c697b-b47e-44ef-ac59-d788250a3dbb" />
 
@@ -263,10 +266,38 @@ git rebase bugFix
 
 ### Пример.
 
-1. Переключись на ветку bugFix
+1. Переключись на ветку bugFix.
 
-2. Сделай коммит
+2. Сделай коммит.
 
-3. Вернись на main и сделай коммит ещё раз
+3. Вернись на main и сделай коммит ещё раз.
 
-4. Переключись на bugFix и сделай rebase на main
+4. Переключись на bugFix и сделай rebase на main.
+
+5. Нужно получить визулизацию, как на картинке.
+
+<img width="368" height="696" alt="image" src="https://github.com/user-attachments/assets/f89d1557-9daa-4112-aa1c-ecb241be4401" />
+
+1. Пропишем команды.
+```
+git checkout -b bugFix
+git commit
+git checkout main
+git commit
+git checkout bugFix
+git rebase main
+```
+Результат:
+
+<img width="1019" height="418" alt="image" src="https://github.com/user-attachments/assets/f2db3c4a-71bd-4255-9c46-1ff2eebe1d6f" />
+
+
+<br>
+
+<br>
+
+<br>
+
+ 
+
+

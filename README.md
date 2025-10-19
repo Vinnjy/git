@@ -314,7 +314,7 @@ git rebase bugFix
 
 Дано:
 
-<img width="200" height="181" alt="image" src="https://github.com/user-attachments/assets/70ae9e87-1a15-41aa-b9cb-0e6422e2502a" />
+<img width="145" height="162" alt="image" src="https://github.com/user-attachments/assets/26bc6d56-318e-49ad-9a3d-6bd9b4fb0643" />
 
 1. Переключись на ветку bugFix.
 
@@ -341,7 +341,7 @@ git rebase main
 ```
 Результат:
 
-<img width="1019" height="418" alt="image" src="https://github.com/user-attachments/assets/f2db3c4a-71bd-4255-9c46-1ff2eebe1d6f" />
+<img width="868" height="407" alt="image" src="https://github.com/user-attachments/assets/516bef45-4136-455f-95af-f9414c616df2" />
 
 <br>
 
@@ -365,7 +365,7 @@ git rebase main
 
 ДО:
 
-<img width="422" height="393" alt="image" src="https://github.com/user-attachments/assets/13437b5b-2d82-445c-808b-30d9b9ceb225" />
+<img width="193" height="216" alt="image" src="https://github.com/user-attachments/assets/9ffaacc6-6626-414b-bc9d-9481bbf918b8" />
 
 ### Решение.
 
@@ -379,7 +379,7 @@ git checkout C2
 
 ПОСЛЕ:
 
-<img width="422" height="393" alt="image" src="https://github.com/user-attachments/assets/671d1ecd-5c03-42be-af83-eb4c048ae584" />
+<img width="194" height="363" alt="image" src="https://github.com/user-attachments/assets/11b981f5-9dae-4564-a75f-b96294255a1d" />
 
 * HEAD скрывался за ветке main.
 
@@ -393,7 +393,7 @@ git checkout C2
 
 * HEAD -> main -> C1.
 
-<img width="413" height="390" alt="image" src="https://github.com/user-attachments/assets/fa4d0066-f168-4672-a83e-9e5aef80198f" />
+<img width="144" height="188" alt="image" src="https://github.com/user-attachments/assets/d744bee3-b4cd-4196-a305-2336efd6a710" />
 
 ### Решение.
 
@@ -403,7 +403,7 @@ git checkout C1
 ```
 Результат:
 
-<img width="418" height="393" alt="image" src="https://github.com/user-attachments/assets/236fbbe5-7f55-4d61-ba85-1a8caaa011fd" />
+<img width="195" height="218" alt="image" src="https://github.com/user-attachments/assets/eae41f89-fda2-47da-8da4-e73809ef4f10" />
 
 ПОСЛЕ:
 
@@ -413,7 +413,7 @@ git checkout C1
 
 Дано:
 
-<img width="604" height="477" alt="image" src="https://github.com/user-attachments/assets/d95569dc-bf51-4e5c-9307-a3b681df716a" />
+<img width="528" height="438" alt="image" src="https://github.com/user-attachments/assets/cec3f95d-18b3-4ebd-8625-9b2ecb1f69f9" />
 
 1. Отделим HEAD от ветки bugFix и присвоим его последнему коммиту в этой же ветке.
 
@@ -421,7 +421,7 @@ git checkout C1
 
 3. Нужно получить визулизацию, как на картинке.
 
-<img width="391" height="712" alt="image" src="https://github.com/user-attachments/assets/89166ebf-1330-486b-a2e5-e7208075b140" />
+<img width="297" height="669" alt="image" src="https://github.com/user-attachments/assets/99116e07-5c9f-41d7-8437-cf4e0d899294" />
 
 ### Решение.
 
@@ -431,7 +431,7 @@ git checkout C4
 ```
 Результат:
 
-<img width="960" height="461" alt="image" src="https://github.com/user-attachments/assets/6ac6f4a3-69a1-422f-b7f6-cad0a6c00d55" />
+<img width="847" height="435" alt="image" src="https://github.com/user-attachments/assets/47a178cc-bb46-467b-8238-ad66f2e6f4bd" />
 
 <br>
 
@@ -467,7 +467,7 @@ git checkout C4
 
 2. Давайте переключимся на коммит Выше main
 
-<img width="413" height="388" alt="image" src="https://github.com/user-attachments/assets/1b35cae2-0f07-4219-94da-a48da63d450b" />
+<img width="137" height="332" alt="image" src="https://github.com/user-attachments/assets/bb5dbd7d-9516-42cc-a681-a0041501b0b6" />
 
 ### Решение.
 
@@ -477,7 +477,7 @@ git checkout main^
 ```
 Результат:
 
-<img width="413" height="392" alt="image" src="https://github.com/user-attachments/assets/22084f27-550e-4f21-82b4-ddf69b64f981" />
+<img width="138" height="337" alt="image" src="https://github.com/user-attachments/assets/bed77b43-0c40-47bf-acf1-949707c71a79" />
 
 ### Вместо ветки, как относительная ссылка, можно использовать HEAD.
 
@@ -485,7 +485,7 @@ git checkout main^
 
 1. Пройдёмся несколько раз по дереву коммитов.
 
-<img width="413" height="394" alt="image" src="https://github.com/user-attachments/assets/003ea055-8e83-4113-9bc5-2a7a1c9f7d76" />
+<img width="140" height="335" alt="image" src="https://github.com/user-attachments/assets/5d6bf45d-3ef1-4b6c-adea-560b4b2c0495" />
 
 ### Решение.
 
@@ -498,19 +498,19 @@ git checkout HEAD^
 ```
 Результат:
 
-<img width="419" height="396" alt="image" src="https://github.com/user-attachments/assets/9bd897a0-a8cc-40d0-a3a9-b06e93f8270e" />
+<img width="202" height="336" alt="image" src="https://github.com/user-attachments/assets/5175bda5-03c6-49f8-94a2-f650562af843" />
 
 ### Пример.
 
 Дано:
 
-<img width="609" height="474" alt="image" src="https://github.com/user-attachments/assets/5c5be9f5-3236-412f-8db2-0814e6a2ddda" />
+<img width="515" height="434" alt="image" src="https://github.com/user-attachments/assets/544cb5d5-024d-49eb-a7ca-467aeda74a3d" />
 
 1. Переместись на первого родителя ветки bugFix. Это отделит HEAD от ветки.
 
 2. Нужно получить визулизацию, как на картинке.
 
-<img width="390" height="711" alt="image" src="https://github.com/user-attachments/assets/5c516907-83d0-45c6-bd5f-ce0ff118ec02" />
+<img width="229" height="684" alt="image" src="https://github.com/user-attachments/assets/882e287a-26aa-463b-98a8-d0ccec9ab504" />
 
 ### Решение.
 
@@ -520,13 +520,13 @@ git checkout HEAD^
 ```
 Результат:
 
-<img width="880" height="469" alt="image" src="https://github.com/user-attachments/assets/d918bf9e-c197-4449-8c46-a48fce30cd50" />
+<img width="784" height="432" alt="image" src="https://github.com/user-attachments/assets/e46675ef-5065-4184-800a-8331d29d2092" />
 
 ### Пример.
 
 Переместиться на 4 коммита назад.
 
-<img width="411" height="390" alt="image" src="https://github.com/user-attachments/assets/47fc2cb0-6235-47e7-9b34-85a21f48592a" />
+<img width="129" height="329" alt="image" src="https://github.com/user-attachments/assets/507b327a-ba6c-4c57-a5eb-bb420ca614c9" />
 
 ### Решение.
 
@@ -536,7 +536,7 @@ git checkout HEAD~4
 ```
 Результат:
 
-<img width="420" height="396" alt="image" src="https://github.com/user-attachments/assets/91243475-63d6-414e-9d9c-18b1001a2113" />
+<img width="198" height="343" alt="image" src="https://github.com/user-attachments/assets/9f121820-e1dd-4010-8549-28fe1e6ec0bf" />
 
 <br>
 
@@ -560,7 +560,7 @@ git branch -f main HEAD~n
 
 Переместить ветку main на 3 родителя назад.
 
-<img width="418" height="390" alt="image" src="https://github.com/user-attachments/assets/efa82b5a-6edb-40a7-a330-56afe5113399" />
+<img width="154" height="339" alt="image" src="https://github.com/user-attachments/assets/deecf336-83f1-467e-b0db-232eacb2d8ef" />
 
 ### Решение.
 
@@ -570,7 +570,7 @@ git branch -f main HEAD~3
 ```
 Результат:
 
-<img width="415" height="388" alt="image" src="https://github.com/user-attachments/assets/a96f99b9-d4f9-41eb-9a98-b14c9c2d5bba" />
+<img width="154" height="327" alt="image" src="https://github.com/user-attachments/assets/20580fd9-3ecc-474e-8696-5ca4f21ee32a" />
 
 * Относительная ссылка дала нам возможность просто сослаться на C1, а branch forcing (-f) позволил быстро переместить указатель ветки на этот коммит.
 
@@ -578,11 +578,11 @@ git branch -f main HEAD~3
 
 Дано:
 
-<img width="655" height="580" alt="image" src="https://github.com/user-attachments/assets/962471c9-ab74-4630-b407-de459c8255dc" />
+<img width="537" height="534" alt="image" src="https://github.com/user-attachments/assets/80538d9b-447b-4896-ae4a-2ad9760afc95" />
 
 Передвинь HEAD, main и bugFix так, как показано на визуализации.
 
-<img width="381" height="711" alt="image" src="https://github.com/user-attachments/assets/ced03939-1e5e-451e-bc65-c14c669b8887" />
+<img width="304" height="637" alt="image" src="https://github.com/user-attachments/assets/c2a36331-9ee9-4ef2-96d5-ad5ffa424c39" />
 
 ### Решение.
 
@@ -594,7 +594,7 @@ git checkout HEAD~1
 ```
 Результат:
 
-<img width="906" height="550" alt="image" src="https://github.com/user-attachments/assets/01c4a745-9f76-4a1a-b0fd-3f9d1bd30b0c" />
+<img width="852" height="523" alt="image" src="https://github.com/user-attachments/assets/5fabdc46-e6c4-4796-a9b3-8f118b387d48" />
 
 <br>
 

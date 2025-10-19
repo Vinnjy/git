@@ -36,7 +36,7 @@
 
 2. Сейчас в нём два коммита: первый, исходный коммит С0 и один коммит С1 после него, содержащий изменения.
 
-<img width="425" height="397" alt="image" src="https://github.com/user-attachments/assets/0b302147-991c-4c2b-b4b6-b57dc8928c2c" />
+<img width="205" height="201" alt="image" src="https://github.com/user-attachments/assets/344fada6-32ba-4a6c-b084-fe6bb554a5d4" />
 
 ### Решение.
 
@@ -46,7 +46,7 @@ git commit
 ```
 Результат:
 
-<img width="422" height="394" alt="image" src="https://github.com/user-attachments/assets/d2937647-3d52-4a29-af8c-46ca2d2f1e72" />
+<img width="181" height="340" alt="image" src="https://github.com/user-attachments/assets/3a25665c-510b-4fa2-9b43-2cc46132cc71" />
 
 * Только что внесли изменения в репозиторий и сохранили их как коммит. У коммита, который мы только что сделали, есть родитель, С1, который указывает на предыдущий коммит.
 
@@ -54,11 +54,11 @@ git commit
 
 Дано:
 
-<img width="225" height="173" alt="image" src="https://github.com/user-attachments/assets/877769a8-bda2-41c5-98da-012702cae5f0" />
+<img width="205" height="201" alt="image" src="https://github.com/user-attachments/assets/344fada6-32ba-4a6c-b084-fe6bb554a5d4" />
 
 1. Сделайте 2 коммита, чтобы получить визулизацию, как на картинке.
 
-<img width="375" height="699" alt="image" src="https://github.com/user-attachments/assets/de0ef457-d0f3-4008-835c-be0a41813b8f" />
+<img width="171" height="651" alt="image" src="https://github.com/user-attachments/assets/58585f29-1b2e-4f30-8ddf-40a614cd1553" />
 
 ### Решение.
 
@@ -69,7 +69,7 @@ git commit
 ```
 Результат:
 
-<img width="311" height="462" alt="image" src="https://github.com/user-attachments/assets/102cc230-28e2-4caa-8d73-1d6917160a0e" />
+<img width="155" height="415" alt="image" src="https://github.com/user-attachments/assets/f297c0d2-2c77-4087-b455-13cbdb8c5f13" />
 
 <br>
 
@@ -89,7 +89,7 @@ git commit
 
 Создадим новую ветку с именем newImage.
 
-<img width="419" height="393" alt="image" src="https://github.com/user-attachments/assets/b0c2972d-1486-48c0-a2f0-84e3ba2d417a" />
+<img width="205" height="201" alt="image" src="https://github.com/user-attachments/assets/344fada6-32ba-4a6c-b084-fe6bb554a5d4" />
 
 ### Решение.
 
@@ -99,7 +99,7 @@ git branch newImage
 ```
 Результат:
 
-<img width="424" height="391" alt="image" src="https://github.com/user-attachments/assets/8e0afee8-d44f-4324-8628-5da64ac2df26" />
+<img width="187" height="192" alt="image" src="https://github.com/user-attachments/assets/ff7e5934-8d3f-46eb-aa90-ce75b801a799" />
 
 * Ветка newImage указывает на коммит С1.
 
@@ -109,13 +109,13 @@ git commit
 ```
 Результат:
 
-<img width="415" height="391" alt="image" src="https://github.com/user-attachments/assets/f241f41c-a78d-4b89-b30d-8a5cc16ee8e0" />
+<img width="160" height="338" alt="image" src="https://github.com/user-attachments/assets/3c29db28-b96f-4336-a47b-59d08ad44507" />
 
 * Ветка main сдвинулась, тогда как ветка newImage - нет. Всё из-за того, что мы не переключились на новую ветку, а остались в старой, о чём говорит звёздочка около ветки main.
 
-3. Чтобы сделать коммит для ветки newImage, нужно **переключиься на ветку**, а затем сделать коммит. Вернёмся к пукнту 2:
+3. Чтобы сделать коммит для ветки newImage, нужно **переключиься на ветку**, а затем сделать коммит. Вернёмся к пукнту 1:
 
-<img width="424" height="391" alt="image" src="https://github.com/user-attachments/assets/8e0afee8-d44f-4324-8628-5da64ac2df26" />
+<img width="187" height="192" alt="image" src="https://github.com/user-attachments/assets/ff7e5934-8d3f-46eb-aa90-ce75b801a799" />
 
 4. Пропишем 2 команды:
 ```
@@ -124,7 +124,7 @@ git commit
 ```
 Результат:
 
-<img width="415" height="391" alt="image" src="https://github.com/user-attachments/assets/4c0a535b-3d49-4c5b-93ef-d326d5615bf5" />
+<img width="158" height="339" alt="image" src="https://github.com/user-attachments/assets/d6da4af7-1528-4e12-afe8-99c20183cc99" />
 
 ### Пример.
 
@@ -136,7 +136,7 @@ git commit
 
 2. Нужно получить визулизацию, как на картинке.
 
-<img width="366" height="370" alt="image" src="https://github.com/user-attachments/assets/019585f6-14ef-41aa-806a-d827601e81bc" />
+<img width="167" height="342" alt="image" src="https://github.com/user-attachments/assets/e77783db-5e0b-4aa0-8aaf-8f338bdd0725" />
 
 ### Решение.
 
@@ -148,7 +148,7 @@ git checkout -b bugFix
 
 Результат:
 
-<img width="244" height="181" alt="image" src="https://github.com/user-attachments/assets/c8364015-593e-44fe-a09a-e0d5f9002032" />
+<img width="160" height="165" alt="image" src="https://github.com/user-attachments/assets/ff978f1d-36f4-4090-9f86-416376771299" />
 
 <br>
 

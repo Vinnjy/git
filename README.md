@@ -740,11 +740,11 @@ git cherry pick C2 C4
 
 Дано:
 
-<img width="739" height="459" alt="image" src="https://github.com/user-attachments/assets/7e42691a-f595-4027-ab68-805c7bc76a6f" />
+<img width="682" height="440" alt="image" src="https://github.com/user-attachments/assets/afddf65b-37bc-4275-a13f-553f7037f391" />
 
 1. Cкопируй изменения из этих трёх веток в мастер. Чтобы понять, какие коммиты копировать, посмотри на визуализацию уровня.
 
-<img width="393" height="685" alt="image" src="https://github.com/user-attachments/assets/30631e76-b048-4b80-85a8-145e0ac1488d" />
+<img width="320" height="640" alt="image" src="https://github.com/user-attachments/assets/dd0710c0-561b-422b-a4b5-f58837227b45" />
 
 ### Решение.
 
@@ -754,7 +754,7 @@ git cherry pick C3 C4 C7
 ```
 Результат:
 
-<img width="1273" height="588" alt="image" src="https://github.com/user-attachments/assets/276bfd8a-7823-4d27-865c-667dd99f3dc3" />
+<img width="1156" height="558" alt="image" src="https://github.com/user-attachments/assets/36f5f6ba-968c-4c8e-ae70-8de7e944dd3a" />
 
 <br>
 
@@ -800,7 +800,7 @@ git reabse -i HEAD~4
 
 <img width="898" height="535" alt="image" src="https://github.com/user-attachments/assets/d5b219e3-f5b6-407d-ad51-0fe20f100330" />
 
-<img width="418" height="392" alt="image" src="https://github.com/user-attachments/assets/42465ad9-c18c-4fc4-b828-c7d9c69f712a" />
+<img width="305" height="329" alt="image" src="https://github.com/user-attachments/assets/da1ae7da-6112-4b23-8d16-6e40b54cbd11" />
 
 * Скопировали коммиты, как сами и указали.
 
@@ -808,11 +808,11 @@ git reabse -i HEAD~4
 
 Дано:
 
-<img width="203" height="655" alt="image" src="https://github.com/user-attachments/assets/6e0e1192-2d97-47a4-8aa8-961cb8a3843c" />
+<img width="141" height="646" alt="image" src="https://github.com/user-attachments/assets/b763b72f-7e02-4414-8d3a-20a5359451e3" />
 
 1. Переставь коммиты при помощи интерактивного rebase в таком порядке, как указано на визуализации.
 
-<img width="394" height="678" alt="image" src="https://github.com/user-attachments/assets/20c1cff4-3b76-448d-9cdf-44fce14b0ff5" />
+<img width="291" height="605" alt="image" src="https://github.com/user-attachments/assets/035463e6-627d-448c-ae7a-97753e47cbfa" />
 
 1. Пропишем команды:
 ```
@@ -826,8 +826,7 @@ git reabse -i HEAD~4
 
 <img width="890" height="534" alt="image" src="https://github.com/user-attachments/assets/a635ea21-6709-4a97-a460-cea3f3f99fb8" />
 
-<img width="947" height="670" alt="image" src="https://github.com/user-attachments/assets/b1fc55bf-9b1a-4b30-be9b-e3f9f4b436c3" />
-
+<img width="856" height="648" alt="image" src="https://github.com/user-attachments/assets/75e9977a-29a3-416c-aa40-e53790179035" />
 
 <br>
 

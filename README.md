@@ -588,7 +588,7 @@ git branch -f main HEAD~3
 
 1. Пропишем команды:
 ```
-git braanch -f main C6
+git branch -f main C6
 git branch -f bugFix HEAD~2
 git checkout HEAD~1
 ```
@@ -630,7 +630,7 @@ git revert
 
 Посмотрим, как это работает.
 
-<img width="411" height="391" alt="image" src="https://github.com/user-attachments/assets/2a946cfe-b773-4b15-99de-7ae41c96b502" />
+<img width="131" height="332" alt="image" src="https://github.com/user-attachments/assets/f37c4e60-02d9-49e4-89fb-86e817fab253" />
 
 ### Решение.
 
@@ -640,7 +640,7 @@ git reset HEAD~1
 ```
 Результат:
 
-<img width="418" height="390" alt="image" src="https://github.com/user-attachments/assets/6b3c4354-1437-4983-b020-615c8e799bd0" />
+<img width="127" height="333" alt="image" src="https://github.com/user-attachments/assets/75116e9d-6c9c-4491-afee-e752a091a4c6" />
 
 * Git просто ***перенёс ссылку на main обратно на коммит C1***. Теперь наш локальный репозиторий в состоянии, как будто C2 никогда не существовал.
 
@@ -654,7 +654,7 @@ git reset HEAD~1
 
 Посмотрим, как это работает.
 
-<img width="418" height="393" alt="image" src="https://github.com/user-attachments/assets/81e01aff-4d4c-44ec-8568-298e0fe26f4c" />
+<img width="131" height="330" alt="image" src="https://github.com/user-attachments/assets/d2bbf86f-bcd3-4d5e-9c56-6634739a519b" />
 
 ### Решение.
 
@@ -664,7 +664,7 @@ git revert HEAD
 ```
 Результат:
 
-<img width="416" height="392" alt="image" src="https://github.com/user-attachments/assets/b1e6515c-c814-4839-8763-28e227be8eb7" />
+<img width="130" height="329" alt="image" src="https://github.com/user-attachments/assets/dbe8eff1-d356-42d1-ba12-a2d63916d251" />
 
 * появился новый коммит. Дело в том, что ***новый коммит C2' просто содержит изменения, полностью противоположные тем, что сделаны в коммите C2***. После revert можно сделать push и поделиться изменениями с остальными.
 
@@ -672,7 +672,7 @@ git revert HEAD
 
 Дано:
 
-<img width="609" height="339" alt="image" src="https://github.com/user-attachments/assets/93fda058-6ff1-4656-b259-86c6d4a272f1" />
+<img width="519" height="316" alt="image" src="https://github.com/user-attachments/assets/d884b7ae-776c-4e79-8888-ffd6100ce462" />
 
 1. Отмени самый последний коммит на ветках local и pushed. Всего будет отменено два коммита (по одному на ветку).
 
@@ -680,7 +680,7 @@ git revert HEAD
 
 3. Нужно получить визулизацию, как на картинке.
 
-<img width="387" height="702" alt="image" src="https://github.com/user-attachments/assets/7c3361fd-296b-42a8-82a1-dfb92262c885" />
+<img width="218" height="632" alt="image" src="https://github.com/user-attachments/assets/41feaec2-06d9-47a8-80d2-5dc560ff7289" />
 
 ### Решение.
 
@@ -692,7 +692,7 @@ git revert pushed
 ```
 Результат:
 
-<img width="837" height="435" alt="image" src="https://github.com/user-attachments/assets/10efb6a2-9f95-4d97-b025-2c9ef1c64c57" />
+<img width="769" height="403" alt="image" src="https://github.com/user-attachments/assets/97e7e88d-c2cb-48ef-b036-981479583a61" />
 
 <br>
 
@@ -722,7 +722,7 @@ git cherry-pick <Commit1> <Commit2> <...>
 
 2. Мы можем сделать это при помощи команды rebase, которую мы уже прошли, но давай посмотрим, как cherry-pick справится с этой задачей.
 
-<img width="419" height="394" alt="image" src="https://github.com/user-attachments/assets/2712dec9-f759-4103-b67a-f1d126520ebd" />
+<img width="237" height="338" alt="image" src="https://github.com/user-attachments/assets/03591807-b225-47d4-9be1-6babb06088bc" />
 
 ### Решение.
 
@@ -732,7 +732,7 @@ git cherry pick C2 C4
 ```
 Результат:
 
-<img width="426" height="394" alt="image" src="https://github.com/user-attachments/assets/359b6267-b28a-4bb1-a216-07f0b554b64c" />
+<img width="247" height="364" alt="image" src="https://github.com/user-attachments/assets/bdc2f14f-6d6a-4650-9412-5dd912df2f15" />
 
 * Копии С2 и С4 теперь в ветке, где был HEAD.
 
@@ -788,7 +788,7 @@ git cherry pick C3 C4 C7
 
 2. Переставляем несколько коммитов (или удали кое-какие) и посмотри, что получится в итоге.
 
-<img width="421" height="398" alt="image" src="https://github.com/user-attachments/assets/02d866ac-d8c2-4135-ba50-8cc057b9e008" />
+<img width="127" height="337" alt="image" src="https://github.com/user-attachments/assets/25c7bd8b-1bfc-4701-b4f7-7957af5fd62b" />
 
 ### Решение.
 

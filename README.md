@@ -2,25 +2,37 @@
 
 ### Основы:
 
-  * ### [1.1. Коммиты = git commit](#title0)
+  * ### [Коммиты = git commit](#title0)
 
-  * ### [1.2. Ветвление = git branch или git checkout -b](#title1)
+  * ### [Ветвление = git branch или git checkout -b](#title1)
 
-  * ### [1.3. Ветки и слияние = git merge](#title2)
+  * ### [Ветки и слияние = git merge](#title2)
 
-  * ### [1.4. Ветки и слияние-копией = git rebase](#title3)
+  * ### [Ветки и слияние-копией = git rebase](#title3)
 
-  * ### [2.1. HEAD = git checkout (коммит или ветка)](#title4)
+  * ### [HEAD = git checkout (коммит или ветка)](#title4)
   
-  * ### [2.2. Относительные ссылки (^, ~) = git checkout (ветка или HEAD)^](#title5)
+  * ### [Относительные ссылки (^, ~) = git checkout (ветка или HEAD)^](#title5)
 
-  * ### [2.3. Перемещение ветки = git branch -f](#title6)
+  * ### [Перемещение ветки = git branch -f](#title6)
   
-  * ### [2.4. Отмена изменений = git reset или git revert](#title7)
+  * ### [Отмена изменений = git reset или git revert](#title7)
 
-  * ### [3.1. Перемещение изменений = git cherry pick](#title8)
+  * ### [Перемещение изменений = git cherry pick](#title8)
 
-  * ### [3.2. Перемещение изменений (интерактивный rebase) = git rebase -i](#title9)
+  * ### [Перемещение изменений (интерактивный rebase) = git rebase -i](#title9)
+
+### Примеры рабочих ситуаций.
+
+  * ### [Исправленные ошибка](#title10)
+
+  * а
+
+<br>
+
+<br>
+
+<br>
 
 ## <a id ="title0">Коммиты</a>
 
@@ -814,6 +826,8 @@ git reabse -i HEAD~4
 
 <img width="291" height="605" alt="image" src="https://github.com/user-attachments/assets/035463e6-627d-448c-ae7a-97753e47cbfa" />
 
+### Решение.
+
 1. Пропишем команды:
 ```
 git reabse -i HEAD~4
@@ -835,8 +849,46 @@ git reabse -i HEAD~4
 <br>
 
 
-## <a id ="title10"></a>
+## <a id ="title10">Исправленные ошибка</a>
 
+Вот ситуация, которая часто случается при разработке: мы пытаемся ***отследить ошибку, но она не очень очевидна***. 
+
+Для того, чтобы достичь успеха на этом поприще, мы используем ***несколько команд для отладки и вывода***.
+
+**Каждая отладочная команда (команды) вывода находится в своём коммите**. 
+
+В итоге мы нашли ошибку, исправили её и порадовались!
+
+Но проблема в том, что мы хотим ***добавить в main только исправление ошибки из ветки bugFix***. Если мы воспользуемся простым fast-forward, то в main попадут также отладочные команды. Должен быть другой способ...
+
+### Пример.
+
+Дано:
+
+<img width="138" height="532" alt="image" src="https://github.com/user-attachments/assets/94435d46-4d47-4b15-bd62-1cd14fe35f37" />
+
+1. Git копировать только один из коммитов.
+
+2. Убедись, что в ветку main попал коммит, на который ссылается bugFix.
+
+3. Нужно получить визулизацию, как на картинке.
+
+<img width="214" height="602" alt="image" src="https://github.com/user-attachments/assets/f5e95439-48e1-4852-afa2-9c0926c4293f" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git rebdse -i HEAD~3
+git branch -f main HEAD (или bugFix или С4)
+```
+```
+git checkout main
+git cherry-pick C4 (или bugFix)
+```
+Результат:
+
+<img width="773" height="527" alt="image" src="https://github.com/user-attachments/assets/b1a20a12-bb23-428f-9622-05deadd05090" />
 
 
 

@@ -36,6 +36,12 @@
 
   * ### [Внесение изменений в более ранний коммит](#title11)
 
+  * ### [Rebase на нескольких ветках](#title14)
+
+  * ### [Определение родителей (~, ^)](#title15)
+
+  * ### [Спутанные ветки](#title16)
+
 <br>
 
 <br>
@@ -1033,7 +1039,7 @@ git cherry-pick C2' C3
 
 ### Решение.
 
-1. Пропишем команды:
+1. Пропишем команду:
 ```
 git tag v1 C1
 ```
@@ -1099,7 +1105,7 @@ git describe <ref>
 
 ### Решение.
 
-1. Пропишем команды:
+1. Пропишем команду:
 ```
 git tag v2 C3
 ```
@@ -1145,5 +1151,142 @@ git describe bugFix
 
 <br>
 
-## <a id ="title14"></a>
+## <a id ="title14">Rebase на нескольких ветках</a>
+
+### Пример.
+
+Дано:
+
+<img width="763" height="438" alt="image" src="https://github.com/user-attachments/assets/a6fc0c77-b386-4488-ac9c-62e759a1f314" />
+
+1. У нас тут куча веток! Было бы круто перенести все изменения из них в мастер.
+
+2. Но начальство усложняет нашу задачу тем, что желает видеть все коммиты по порядку. Так что коммит С7' должен идти после коммита С6' и так далее.
+
+3. Нужно получить визулизацию, как на картинке.
+
+<img width="234" height="602" alt="image" src="https://github.com/user-attachments/assets/c7bc8ec1-9a35-45d0-9868-cb9f53607105" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git checkout bugFix
+git rebase main
+git checkout side
+git rebase -i bugFix
+git checkout another
+git rebase -i side
+git branch -f main HEAD
+```
+Результат:
+
+<img width="867" height="892" alt="image" src="https://github.com/user-attachments/assets/dcf00923-cb3a-4601-9ca7-cdefa36c7068" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title15">Определение родителей</a>
+
+* ***Так же как тильда (~), каретка (^) принимает номер после себя***.
+
+Но в отличие от количества коммитов, на которые нужно откатиться назад (как делает ~). 
+
+* **Номер после ^** ***определяет, на какого из родителей мерджа надо перейти***. Учитывая, что мерджевый коммит имеет двух родителей, просто указать ^ нельзя.
+
+* Git по умолчанию перейдёт на "первого" родителя коммита.
+
+### Пример.
+
+<img width="232" height="330" alt="image" src="https://github.com/user-attachments/assets/e281b805-edc4-4b1d-ab0f-97520df50622" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git checkout main^2
+```
+Результат:
+
+<img width="236" height="328" alt="image" src="https://github.com/user-attachments/assets/3a13ef3c-82be-49f3-9447-f1e6a6e850bb" />
+
+### Пример.
+
+<img width="232" height="327" alt="image" src="https://github.com/user-attachments/assets/1c4f51e9-1938-4466-932e-98377ccd7a69" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git checkout HEAD~
+git checkout HEAD^2
+git checkout HEAD~2
+```
+```
+git checkout HEAD~^2~2
+```
+Результат:
+
+<img width="231" height="328" alt="image" src="https://github.com/user-attachments/assets/c8f62f35-cc02-41ab-85f0-43b0e422bc2b" />
+
+### Пример.
+
+Дано:
+
+<img width="519" height="677" alt="image" src="https://github.com/user-attachments/assets/2290e9d0-23f5-4377-ae35-f0897a735232" />
+
+1. Cоздай ветку в указанном месте.
+
+2. Нужно получить визулизацию, как на картинке.
+
+<img width="213" height="660" alt="image" src="https://github.com/user-attachments/assets/7c27139a-75f0-4ace-807f-9d17b54e2080" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git branch -f bugWork HEAD~^2^
+```
+Результат:
+
+<img width="768" height="681" alt="image" src="https://github.com/user-attachments/assets/07e17ba0-adaf-4f51-8e04-1f63ea467b47" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title16">Спутанные ветки</a>
+
+### Пример.
+
+Дано:
+
+<img width="128" height="653" alt="image" src="https://github.com/user-attachments/assets/4cda0654-56f0-49a0-b249-f2a9366ec865" />
+
+1. У нас тут по несколько коммитов в ветках one, two и three. Не важно почему, но нам надо видоизменить эти три ветки при помощи более поздних коммитов из ветки main.
+
+2. Ветка one нуждается в изменении порядка и удалении C5. two требует полного перемешивания, а three хочет получить только один коммит.
+
+<img width="273" height="657" alt="image" src="https://github.com/user-attachments/assets/3751045b-0321-4255-b36b-07c2fd81042f" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git checkout one
+git cherry-pick C4 C3 C2
+git checkout two
+git cherry-pick C5 C4' C3' C2'
+git branch -f three C2
+```
+Результат:
+
+<img width="1020" height="681" alt="image" src="https://github.com/user-attachments/assets/f93f3e79-3912-4d8b-9317-420297063407" />
+
+
 

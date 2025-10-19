@@ -174,7 +174,7 @@ git checkout -b bugFix
 
 3. Можно исправить эту ситуацию, выполнив слияние.
 
-<img width="420" height="393" alt="image" src="https://github.com/user-attachments/assets/202d34b6-d413-4d32-af0f-ad2a7251264f" />
+<img width="241" height="374" alt="image" src="https://github.com/user-attachments/assets/111b05fd-c3b3-4f66-a591-53bfce5cfb26" />
 
 ### Решение.
 
@@ -184,7 +184,7 @@ git merge bugFix
 ```
 Результат:
 
-<img width="424" height="393" alt="image" src="https://github.com/user-attachments/assets/5516d33e-9e97-4ec6-8f85-c22e1b60ad4f" />
+<img width="295" height="363" alt="image" src="https://github.com/user-attachments/assets/103822a7-af38-4101-8df9-b8a55b6a6c86" />
 
 + Ветка main теперь указывает на коммит, у которого два родителя.
 
@@ -210,7 +210,7 @@ git merge main
 ```
 Результат:
 
-<img width="423" height="392" alt="image" src="https://github.com/user-attachments/assets/93006874-f461-4c69-af94-2d6694f6de65" />
+<img width="263" height="383" alt="image" src="https://github.com/user-attachments/assets/c1ac4f63-e714-47d1-92ff-11285a45896b" />
 
 * Так как ветка bugFix была предшественницей main, Git не делал ничего, только сдвинул bugFix на тот же коммит, где находится main.
 
@@ -236,7 +236,7 @@ git merge main
 
 7. Нужно получить визулизацию, как на картинке.
 
-<img width="394" height="711" alt="image" src="https://github.com/user-attachments/assets/48c634b3-7dc7-4d30-b080-224bad274619" />
+<img width="248" height="684" alt="image" src="https://github.com/user-attachments/assets/2422e86b-c625-4d40-8e1e-c321a864b4c5" />
 
 ### Решение.
 
@@ -250,7 +250,7 @@ git merge bugFix
 ```
 Результат:
 
-<img width="962" height="467" alt="image" src="https://github.com/user-attachments/assets/e9b4a701-0946-4841-a2ed-a1c91a246fd7" />
+<img width="793" height="439" alt="image" src="https://github.com/user-attachments/assets/a5fe328d-df90-421b-a8f6-8d9aec0e04a2" />
 
 <br>
 
@@ -274,7 +274,7 @@ git merge bugFix
    
 4. Благодаря этому всё будет выглядеть, как будто эти изменения делались последовательно, хотя на самом деле - параллельно.
 
-<img width="415" height="393" alt="image" src="https://github.com/user-attachments/assets/711d373f-3b31-4244-9936-9785f7073195" />
+<img width="262" height="370" alt="image" src="https://github.com/user-attachments/assets/050f2a8a-afb4-47b5-83f4-f4c2fbd3295b" />
 
 ### Решение.
 
@@ -284,7 +284,7 @@ git rebase main
 ```
 Результат:
 
-<img width="416" height="392" alt="image" src="https://github.com/user-attachments/assets/79d5033b-d59d-4ca7-bb9d-8800eb3f18f6" />
+<img width="253" height="334" alt="image" src="https://github.com/user-attachments/assets/625ea1a9-b18d-4251-8301-f4b1d688a60b" />
 
 * изменения из bugFix находятся в конце ветки main и являют собой линейную последовательность коммитов.
 
@@ -298,7 +298,7 @@ git checkout main
 ```
 Результат:
 
-<img width="422" height="389" alt="image" src="https://github.com/user-attachments/assets/8dfe3abd-dd38-4783-8972-f24b6567ba83" />
+<img width="243" height="334" alt="image" src="https://github.com/user-attachments/assets/1051ad1c-8afd-4196-a67e-f8b6833f7687" />
 
 3. Пропишем команду:
 ```
@@ -306,7 +306,7 @@ git rebase bugFix
 ```
 Результат:
 
-<img width="413" height="389" alt="image" src="https://github.com/user-attachments/assets/073c697b-b47e-44ef-ac59-d788250a3dbb" />
+<img width="247" height="329" alt="image" src="https://github.com/user-attachments/assets/13789d63-182a-4af5-8ef1-3307f23a0e72" />
 
 * Так как ветка main был предком bugFix, git просто сдвинул ссылку на main вперёд.
 
@@ -326,7 +326,7 @@ git rebase bugFix
 
 5. Нужно получить визулизацию, как на картинке.
 
-<img width="368" height="696" alt="image" src="https://github.com/user-attachments/assets/f89d1557-9daa-4112-aa1c-ecb241be4401" />
+<img width="323" height="637" alt="image" src="https://github.com/user-attachments/assets/56618dcd-479f-49a3-b3cc-70e8d73c1930" />
 
 ### Решение.
 

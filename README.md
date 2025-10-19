@@ -2,31 +2,39 @@
 
 ### Основы:
 
-  * ### [Коммиты = git commit](#title0)
+  * ### [Коммиты = "git commit"](#title0)
 
-  * ### [Ветвление = git branch или git checkout -b](#title1)
+  * ### [Ветвление = "git branch или git checkout -b"](#title1)
 
-  * ### [Ветки и слияние = git merge](#title2)
+  * ### [Ветки и слияние = "git merge"](#title2)
 
-  * ### [Ветки и слияние-копией = git rebase](#title3)
+  * ### [Ветки и слияние-копией = "git rebase"](#title3)
 
-  * ### [HEAD = git checkout (коммит или ветка)](#title4)
+<br>
+
+  * ### [HEAD = "git checkout (коммит или ветка)"](#title4)
   
-  * ### [Относительные ссылки (^, ~) = git checkout (ветка или HEAD)^](#title5)
+  * ### [Относительные ссылки (^, ~) = "git checkout (ветка или HEAD)^"](#title5)
 
-  * ### [Перемещение ветки = git branch -f](#title6)
+  * ### [Перемещение ветки = "git branch -f"](#title6)
   
-  * ### [Отмена изменений = git reset или git revert](#title7)
+  * ### [Отмена изменений = "git reset или git revert"](#title7)
 
-  * ### [Перемещение изменений = git cherry pick](#title8)
+<br>
 
-  * ### [Перемещение изменений (интерактивный rebase) = git rebase -i](#title9)
+  * ### [Перемещение изменений = "git cherry-pick"](#title8)
+
+  * ### [Перемещение изменений (интерактивный rebase) = "git rebase -i"](#title9)
+
+  * ### [Теги = "git tag"](#title12)
+
+  * ### [Описание тегов = "git describe"](#title13)
 
 ### Примеры рабочих ситуаций.
 
   * ### [Исправленные ошибка](#title10)
 
-  * а
+  * ### [Внесение изменений в более ранний коммит](#title11)
 
 <br>
 
@@ -754,9 +762,9 @@ git cherry-pick <Commit1> <Commit2> <...>
 
 ### Решение.
 
-1. Пропишем команды:
+1. Пропишем команду:
 ```
-git cherry pick C2 C4
+git cherry-pick C2 C4
 ```
 Результат:
 
@@ -776,9 +784,9 @@ git cherry pick C2 C4
 
 ### Решение.
 
-1. Пропишем команды:
+1. Пропишем команду:
 ```
-git cherry pick C3 C4 C7
+git cherry-pick C3 C4 C7
 ```
 Результат:
 
@@ -820,9 +828,9 @@ git cherry pick C3 C4 C7
 
 ### Решение.
 
-1. Пропишем команды:
+1. Пропишем команду:
 ```
-git reabse -i HEAD~4
+git rebase -i HEAD~4
 ```
 Результат:
 
@@ -844,9 +852,9 @@ git reabse -i HEAD~4
 
 ### Решение.
 
-1. Пропишем команды:
+1. Пропишем команду:
 ```
-git reabse -i HEAD~4
+git rebase -i HEAD~4
 ```
 Результат:
 
@@ -863,7 +871,6 @@ git reabse -i HEAD~4
 <br>
 
 <br>
-
 
 ## <a id ="title10">Исправленные ошибка</a>
 
@@ -895,7 +902,7 @@ git reabse -i HEAD~4
 
 1. Пропишем команды:
 ```
-git rebdse -i HEAD~3
+git rebase -i HEAD~3
 git branch -f main HEAD (или bugFix или С4)
 ```
 ```
@@ -906,6 +913,237 @@ git cherry-pick C4 (или bugFix)
 
 <img width="773" height="527" alt="image" src="https://github.com/user-attachments/assets/b1a20a12-bb23-428f-9622-05deadd05090" />
 
+<br>
 
+<br>
 
+<br>
+
+## <a id ="title11">Внесение изменений в более ранний коммит</a>
+
+### git rebase -i.
+
+Есть некоторые изменения "newImage" и другие изменения "caption", которые связаны так, что находятся ***друг поверх друга в репозитории***.
+
+Штука в том, что иногда нужно внести небольшие **изменения в более ранний коммит**. В таком случае надо немного поменять newImage, несмотря на то, что коммит уже в прошлом.
+
+### Пример.
+
+Дано:
+
+<img width="142" height="409" alt="image" src="https://github.com/user-attachments/assets/5c80d2ab-31ce-4b8a-9bbb-60cfb88b86c9" />
+
+1. ***Переставить коммит так, чтобы нужный находился наверху*** при помощи = **git rebase -i**.
+
+2. ***Внести изменения*** при помощи = **git commit --amend** = позволяет добавить новые изменения в последний коммит.
+
+3. ***Переставить всё обратно*** при помощи = **git rebase -i**.
+
+4. Переместить main на изменённую часть дерева, чтобы закончить уровень.
+
+5. Нужно получить визулизацию, как на картинке.
+
+<img width="228" height="654" alt="image" src="https://github.com/user-attachments/assets/ec3ecaa7-b004-4c06-abdc-1fc23a4690ba" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git rebase -i HEAD~2 (переставляем С3 и С2 местами при интерактивном окне) (после выполенния ветка caption вместе с HEAD указывает на C2')
+git commit --amend (получим коммит С2'')  (C2' и C2'' имеют одного родителя C3')
+git rebase -i HEAD~2 (переставляем С3' и С2'' местами при интерактивном окне)
+git branch -f main HEAD (перемещаем ветку main в HEAD)
+```
+Результат:
+
+<img width="842" height="460" alt="image" src="https://github.com/user-attachments/assets/3d38fea1-a74f-4fee-96c8-fba9f8fbbfc8" />
+
+<br>
+
+### git cherry-pick.
+
+До этого использовали rebase -i для перестановки коммитов. Как только нужный нам коммит оказывался в конце, мы могли спокойно изменить его при помощи --amend и переставить обратно.
+
+Такой подход может спровоцировать конфликты. Посмотрим, как справиться с этим **cherry-pick**.
+
+* **Cherry-pick** = ***поместит любой коммит сразу после HEAD*** (только если этот коммит не является предком HEAD).
+
+### Пример.
+
+<img width="235" height="363" alt="image" src="https://github.com/user-attachments/assets/c44b83c7-926f-4bc8-b2da-248e9e1ddcdc" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+gir cherry-pick C2
+```
+Результат:
+
+<img width="235" height="373" alt="image" src="https://github.com/user-attachments/assets/539ac6da-43ba-4a28-93e4-54219ac918be" />
+
+### Пример.
+
+Дано:
+
+<img width="142" height="407" alt="image" src="https://github.com/user-attachments/assets/c9178432-f2d5-4ce8-b36c-9d7f9d3bcf2d" />
+
+1. Та же самая задача. Нужно получить визулизацию, как на картинке.
+
+<img width="230" height="640" alt="image" src="https://github.com/user-attachments/assets/8f7d327c-410e-41e6-85af-e6ef671e1b1d" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git checkout main
+git cherry-pick C2
+git branch -f main HEAD~1
+git cherry-pick C2' C3
+```
+Результат:
+
+<img width="810" height="436" alt="image" src="https://github.com/user-attachments/assets/b32044ba-cd4f-4d2a-a048-ab4949534f4e" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title12">Теги</a>
+
+Ветки ***просто двигать туда-сюда*** и они ***часто ссылаются на разные коммиты как на изменения данных в ветке***. 
+
+* Ветки ***просто изменить***, ***часто временны***, ***постоянно меняют своё состояние***.
+
+В таком случае, где взять постоянную ссылку на момент в истории изменений? Для таких вещей, как релиз и большие слияния, нужно нечто более постоянное, чем ветка.
+
+* Git предоставляет нам **теги**.
+
+* Основная задача – ***ссылаться постоянно на конкретный коммит***.
+
+* После создания ***никогда не сменят своего положения***, так что можно с лёгкостью сделать checkout конкретного момента в истории изменений.
+
+### Пример.
+
+Создадим тег на C1, который будет нашей версией 1.
+
+<img width="134" height="333" alt="image" src="https://github.com/user-attachments/assets/6ee002ed-9798-4a31-a589-b4c7d7a071ad" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git tag v1 C1
+```
+Результат:
+
+<img width="130" height="324" alt="image" src="https://github.com/user-attachments/assets/2e819ba4-cccb-42e1-87c0-fe7a435c57da" />
+
+* **Тег v1** = ссылается на C1 явным образом.
+
+* Если конкретный коммит не указан, гит пометит тегом HEAD.
+
+### Пример.
+
+Дано:
+
+<img width="678" height="415" alt="image" src="https://github.com/user-attachments/assets/25b3979a-9f8c-4d93-b02f-be995a80e0f1" />
+
+1. Создайте теги так, как показано на визуализации, и потом перейди на тег v1. Обрати внимание, что ты перейдёте в состояние detached HEAD, так как нельзя сделать коммит прямо в тег v1.
+
+<img width="270" height="625" alt="image" src="https://github.com/user-attachments/assets/197116fc-177c-4aff-9572-0b895886ee2b" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git checkout C2
+git tag v1 C2
+git tag v0 C1
+```
+Результат:
+
+<img width="1014" height="404" alt="image" src="https://github.com/user-attachments/assets/284c83d4-4f79-4844-a69b-3d8b11983150" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title13">Описание тегов</a>
+
+Теги являются прекрасными ориентирами в истории изменений, поэтому в git есть команда, которая показывает, как далеко текущее состояние от ближайшего тега. И эта команда называется git describe
+
+Git describe помогает сориентироваться после отката на много коммитов по истории изменений. Такое может случиться, когда вы сделали git bisect или если вы недавно вернулись из отпуска.
+```
+git describe <ref>
+```
+* **ref** — это что-либо, что ***указывает на конкретный коммит***. Если не указать ref, то git будет считать, что указано текущее положение (HEAD).
+
+Вывод команды выглядит примерно так:
+```
+<tag>-<numCommits>-g<hash>
+```
+* **tag** – ***ближайший тег в истории изменений***. 
+
+* **numCommits** – ***на сколько далеко мы от этого тега***.
+
+* **hash** – ***хеш коммита, который описывается***.
+
+### Пример.
+
+<img width="229" height="360" alt="image" src="https://github.com/user-attachments/assets/de99ffad-b680-4930-a42f-da73800e1607" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git tag v2 C3
+```
+Результат:
+
+<img width="249" height="353" alt="image" src="https://github.com/user-attachments/assets/6187768c-108b-475b-8fcf-75ca2d1afa9f" />
+
+* git describe main выведет:
+
+  * v1-2-gC2
+
+* git describe side выведет:
+
+  * v2-1-gC4
+
+### Пример.
+
+Дано:
+
+<img width="675" height="565" alt="image" src="https://github.com/user-attachments/assets/4fdbca82-3d5f-4e1e-8cbe-7c321cbbe886" />
+
+1. Нужно получить визулизацию, как на картинке.
+
+<img width="278" height="660" alt="image" src="https://github.com/user-attachments/assets/8def800a-8b99-450a-a3aa-749df5ce52cc" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git commit
+git describe main
+git describe bugFix
+```
+Результат:
+
+<img width="374" height="66" alt="image" src="https://github.com/user-attachments/assets/059e9782-2568-4022-b806-e5ce43218cad" />
+
+<img width="376" height="54" alt="image" src="https://github.com/user-attachments/assets/fe55c42e-afe8-4064-8472-669ebcd6b5da" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title14"></a>
 

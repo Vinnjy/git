@@ -1479,6 +1479,8 @@ git fetch
 
 1. Запустите git fetch и скачайте все коммиты!
 
+2. Нужно получить визулизацию, как на картинке.
+
 <img width="300" height="605" alt="image" src="https://github.com/user-attachments/assets/1a299729-bd53-49f3-98b9-bea9f9573311" />
 
 ### Решение.
@@ -1529,4 +1531,24 @@ git pull
 
 * Ветка main отображает изменения с удалённого репозитория (в данном случае — с репозитория origin).
 
+* git pull существенно уменьшает работу, если бы использовали git fetch и слияние (merging) скачанной ветки.
 
+### Пример.
+
+Дано:
+
+<img width="595" height="265" alt="image" src="https://github.com/user-attachments/assets/75881f3f-39fe-4c96-9b34-2af9349d855d" />
+
+1. Нужно получить визулизацию, как на картинке.
+
+<img width="332" height="576" alt="image" src="https://github.com/user-attachments/assets/5432d9f2-5ead-4d8b-96e5-cff6133b9bad" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git pull
+```
+Результат:
+
+<img width="1027" height="378" alt="image" src="https://github.com/user-attachments/assets/657c554a-285b-4d10-babf-0be6425b4976" />

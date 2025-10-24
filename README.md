@@ -80,7 +80,7 @@
 
   * ### [Push мастер = "git fetch + git rebase ветка куда и ветка-копия"](#title25)
 
-  * ### [Слияение с удаённым репозиторием = "git pull + git merge"](#title26)
+  * ### [Слияние с удаённым репозиторием = "git pull + git merge"](#title26)
 
 <br>
 

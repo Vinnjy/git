@@ -84,11 +84,13 @@
 
   * ### [Слежка за удалённым репозиторием = "git checkout -b <ветка> o/main (+ git pull) + git push или git branch -u o/main <ветка> (+ git pull) + git push"](#title27)
 
-  * ### [Аргументы Push = "git push <удалённый_репозиторий> <целевая_ветка> или git push origin <источник>:<получатель>"](#title28)
+  * ### [Аргументы для Push = "git push <удалённый_репозиторий> <целевая_ветка> или git push origin <источник>:<получатель>"](#title28)
 
-  * ### [Аргументы Fetch = "git fetch <удалённая ветка или коммит>:<ветка локального репозитория> или git fetch <удалённая ветка или коммит>"](#title29)
+  * ### [Аргументы для Fetch = "git fetch <удалённая ветка или коммит>:<ветка локального репозитория> или git fetch <удалённая ветка или коммит>"](#title29)
 
-  * ### [Пустой источник](#title30)
+  * ### [Пустой источник = "git push origin  :<ветка> = удалит или git fetch origin  :<ветка> = добавит"](#title30)
+
+  * ### [Аргументы для Pull](#title31)
 
 <br>
 
@@ -2584,5 +2586,13 @@ git fetch origin :bar (добавит)
 Результат:
 
 <img width="827" height="146" alt="image" src="https://github.com/user-attachments/assets/3585dbb3-a0d2-4589-8b75-fb4024cc645e" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title31">Аргументы для Pull</a>
 
 

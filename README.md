@@ -84,6 +84,8 @@
 
   * ### [Слежка за удалённым репозиторием = "git checkout -b ветка o/main + git pull + git push"](#title27)
 
+  * ### [Аргументы Push](#title28)
+
 <br>
 
 <br>
@@ -2095,7 +2097,7 @@ git push
 
 <br>
 
-## <a id ="title27">Cлtежка за удалённым репозиторием</a>
+## <a id ="title27">Cлежка за удалённым репозиторием</a>
 
 ### Удалённые-отслеживаемые ветки
 
@@ -2226,4 +2228,11 @@ git push
 
 <img width="1171" height="379" alt="image" src="https://github.com/user-attachments/assets/dcac60c1-caa4-46a8-a74a-88a5a4ee3029" />
 
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title28">Аргументы Push</a>
 

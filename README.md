@@ -72,7 +72,7 @@
 
   * ### [Расхождение в истории = "git pull --rebase & git push или git pull & git push"](#title23)
 
-  * ### [Заблокированная ветвь main](#title24)
+  * ### [Заблокированная ветвь main = "git checkout -b ветка и коммит & git push"](#title24)
 
 <br>
 

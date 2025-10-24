@@ -2516,3 +2516,73 @@ git merge main
 
 ## <a id ="title30">Пустой источник</a>
 
+Git использует параметр <источник> странным образом. Странность заключается в том, что Вы можете оставить пустым параметр <источник> для команд git push и git fetch:
+```
+git push origin :side
+```
+```
+git fetch origin :bugFix
+```
+
+### Пример.
+
+Что же будет с веткой, на которую мы делаем git push с пустым аргументом <источник>? 
+
+Она будет удалена.
+
+<img width="298" height="178" alt="image" src="https://github.com/user-attachments/assets/50da57aa-d9d6-4e8c-a123-947609ef21a4" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git push origin :foo
+```
+Результат:
+
+<img width="300" height="173" alt="image" src="https://github.com/user-attachments/assets/768c291b-c77b-4603-8dca-b677a25e58cd" />
+
+* Удалили ветку foo в удаленном репозитории, попытавшить протолкнуть(git push) в неё "ничего".
+
+### Пример.
+
+1. Если попытаемся притянуть изменения (git fetch) из "ничего" к нам в локальный репозиторий, то это создаст новую ветку:
+
+<img width="298" height="172" alt="image" src="https://github.com/user-attachments/assets/49838abd-6f6b-4baa-9831-2ddb267eda86" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git fetch origin :bar
+```
+Результат:
+
+<img width="297" height="175" alt="image" src="https://github.com/user-attachments/assets/d1849178-de3e-4801-b635-af60ccc8e8ac" />
+
+* Появилась локальная ветка bar.
+
+### Пример.
+
+Дано:
+
+<img width="587" height="148" alt="image" src="https://github.com/user-attachments/assets/9d8f09c5-34be-4b82-92b2-dbf452cc2248" />
+
+1. Удалить одну ветку в удаленном репозитории и создать новую ветку в локальном
+
+2. Нужно получить визулизацию, как на картинке.
+
+<img width="284" height="310" alt="image" src="https://github.com/user-attachments/assets/4064877a-eb56-4762-874d-fab0696d2259" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git push origin :foo (удалит)
+git fetch origin :bar (добавит)
+```
+Результат:
+
+<img width="827" height="146" alt="image" src="https://github.com/user-attachments/assets/3585dbb3-a0d2-4589-8b75-fb4024cc645e" />
+
+

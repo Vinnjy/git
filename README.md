@@ -14,9 +14,9 @@
 
 ## Base-Pro:
 
-  * ### [HEAD = "git checkout (коммит или ветка)"](#title4)
+  * ### [HEAD = "git checkout <коммит или ветка>"](#title4)
   
-  * ### [Относительные ссылки (^, ~) = "git checkout (ветка или HEAD)^"](#title5)
+  * ### [Относительные ссылки (^, ~) = "git checkout <ветка или HEAD^>"](#title5)
 
   * ### [Перемещение ветки = "git branch -f"](#title6)
   
@@ -88,7 +88,7 @@
 
   * ### [Аргументы для Fetch = "git fetch <удалённая ветка или коммит>:<ветка локального репозитория> или git fetch <удалённая ветка или коммит>"](#title29)
 
-  * ### [Пустой источник = "git push origin  :<ветка> = удалит или git fetch origin  :<ветка> = добавит"](#title30)
+  * ### [Пустой источник = "git push origin  :<ветка> = удалить или git fetch origin  :<ветка> = добавить"](#title30)
 
   * ### [Аргументы для Pull](#title31)
 
@@ -2594,5 +2594,85 @@ git fetch origin :bar (добавит)
 <br>
 
 ## <a id ="title31">Аргументы для Pull</a>
+
+* **git pull**:
+     
+     * Cначала выполняет git fetch
+     
+     * Cледом сразу git merge с той веткой, в которую притянулись обновления командой fetch.
+
+Другими словами, это все равно, что выполнить git fetch с теми же аргументами, которые вы указали для pull, а затем выполнить git merge с веткой, указанной в аргументе <приемник> команды pull.
+
+Эквивалентны:
+```
+git pull origin foo
+```
+```
+git fetch origin foo
+git merge o/foo
+```
+Эквивалентны:
+```
+git pull origin bar:bugFix
+```
+```
+git fetch origin bar:BugFix
+git merge bugFix
+```
+
+### Пример.
+
+Cначала выполнится fetch с аргументом указанным к pull, а merge выполняется с теми изменениями, которые будут скачаны командой fetch.
+
+<img width="296" height="312" alt="image" src="https://github.com/user-attachments/assets/19b514ac-0706-4948-b4f2-d430a3819b92" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git pull origin main
+```
+Результат:
+
+<img width="346" height="308" alt="image" src="https://github.com/user-attachments/assets/1cc11a26-b8de-4ca8-912b-9fc8636f4610" />
+
+* Указали main, поэтому как обычно все обновления притянулись на ветку o/main. Затем мы слили (merge) обновленную ветку o/main с веткой, на которой мы находимся.
+
+### Пример.
+
+Будет ли это работать, если указать <источник> и <приемник>? Проверим:
+
+<img width="299" height="309" alt="image" src="https://github.com/user-attachments/assets/7327bbbf-7015-4c37-8233-aa4170eafd7e" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git pull origin main:foo
+```
+Результат:
+
+<img width="347" height="309" alt="image" src="https://github.com/user-attachments/assets/ac540cdc-6ebd-4f2a-a427-2f64e98bd8e1" />
+
+* Cоздали новую ветку foo в локальном репозитории, скачали на неё изменения с ветки main удаленного репозитория, а затем слили ветку с веткой bar, на которой находились.
+
+### Пример.
+
+Дано:
+
+<img width="636" height="296" alt="image" src="https://github.com/user-attachments/assets/fcbd4df3-f9a8-4b19-b6f9-f4eba50608a1" />
+
+1. Cкачать несколько изменений, создать несколько новых веток, слить одни ветки в другие.
+
+2. Нужно получить визулизацию, как на картинке.
+
+### Решение.
+
+1. Пропишем команды:
+```
+git pull origin main:foo
+```
+Результат:
+
 
 

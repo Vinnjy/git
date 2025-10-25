@@ -90,7 +90,7 @@
 
   * ### [Пустой источник = "git push origin  :<ветка> = удалить или git fetch origin  :<ветка> = добавить"](#title30)
 
-  * ### [Аргументы для Pull](#title31)
+  * ### [Аргументы для Pull = "git pull <удалённая ветка или коммит>:<ветка локального репозитория> или git pull <удалённая ветка или коммит>"](#title31)
 
 <br>
 
@@ -2666,13 +2666,15 @@ git pull origin main:foo
 
 2. Нужно получить визулизацию, как на картинке.
 
+<img width="315" height="601" alt="image" src="https://github.com/user-attachments/assets/bc226325-e3d7-407c-aca0-ad3013471e66" />
+
 ### Решение.
 
 1. Пропишем команды:
 ```
-git pull origin main:foo
+git pull origin C3:foo
+git pull origin C2:main
 ```
 Результат:
 
-
-
+<img width="1194" height="487" alt="image" src="https://github.com/user-attachments/assets/d4039903-1dd3-4969-92e8-ed3cd83a295e" />

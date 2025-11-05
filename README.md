@@ -2,61 +2,127 @@
 
 ## [Base](https://github.com/winnca/git/tree/1_base)
 
-  * ### Коммиты
-      
-      * git commit
+<details>
+ <summary>Коммиты</summary>
+<br>
 
-  * ### Ветвление
-      
-      * git branch или git checkout -b
+```
+git commit
+```
+</details>
 
-  * ### Ветки и слияние
-      
-      * git merge
+<details>
+ <summary>Ветвление</summary>
+<br>
 
-  * ### Ветки и слияние-копией
-  
-      * git rebase
+```
+git branch
+```
+```
+git checkout -b
+```
+</details>
+
+<details>
+ <summary>Ветки и слияние</summary>
+<br>
+
+```
+git merge
+```
+</details>
+
+<details>
+ <summary>Ветки и слияние-копией</summary>
+<br>
+
+```
+git rebase
+```
+</details>
 
 <br>
 
 ## [Base-Pro](https://github.com/winnca/git/tree/2_base_pro)
 
-  * ### HEAD
-  
-      * git checkout <коммит ИЛИ ветка>
-  
-  * ### Относительные ссылки (^, ~)
-  
-      * git checkout <ветка ИЛИ head^>
+<details>
+ <summary>HEAD</summary>
+<br>
 
-  * ### Перемещение ветки
-  
-      * git branch -f <перемещаемая ветка И ветка-куда>
-  
-  * ### Отмена изменений
-  
-      * git reset или git revert
+```
+git checkout <коммит ИЛИ ветка>
+```
+</details>
+
+<details>
+ <summary>Относительные ссылки (^, ~)</summary>
+<br>
+
+```
+git checkout <ветка ИЛИ head^>
+```
+</details>
+
+<details>
+ <summary>Перемещение ветки</summary>
+<br>
+
+```
+git branch -f <перемещаемая ветка И ветка-куда>
+```
+</details>
+
+<details>
+ <summary>Отмена изменений</summary>
+<br>
+
+```
+git reset
+```
+```
+git revert
+```
+</details>
 
 <br>
 
 ## [Pro](https://github.com/winnca/git/tree/3_pro)
 
-  * ### Перемещение изменений
-  
-      * git cherry-pick
+<details>
+ <summary>Перемещение изменений</summary>
+<br>
 
-  * ### Перемещение изменений (интерактивный rebase)
-  
-      * git rebase -i
+```
+git cherry-pick
+```
+</details>
 
-  * ### Теги
-  
-      * git tag
+<details>
+ <summary>Перемещение изменений (интерактивный rebase)</summary>
+<br>
 
-  * ### Описание тегов
-  
-      * git describe
+```
+git rebase -i
+```
+</details>
+
+<details>
+ <summary>Теги</summary>
+<br>
+
+```
+git tag
+```
+</details>
+
+<details>
+ <summary>Описание тегов</summary>
+<br>
+
+```
+git describe
+```
+</details>
 
 <br>
 
@@ -82,66 +148,178 @@
 
 ## [Pull & Push](https://github.com/winnca/git/tree/5_pull_push)
 
-  * ### Клонирование
-  
-       * git clone
+<details>
+ <summary>Клонирование</summary>
+<br>
 
-  * ### Удалённые ветки
-  
-       * "git checkout origin/main
+```
+git clone
+```
+</details>
 
-  * ### Извлечение/скачивание данных из удаленного репозитория
-  
-       * git fetch
+<details>
+ <summary>Удалённые ветки</summary>
+<br>
 
-  * ### git fetch и git merge
-  
-       * git pull
+```
+git checkout origin/main
+```
+</details>
 
-  * ### Коллективная работа
-  
-       * git fakeTeamwork
+<details>
+ <summary>Извлечение/скачивание данных из удаленного репозитория</summary>
+<br>
 
-  * ### Загрузка изменений в удалённый репозиторий
-  
-       * git push
+```
+git fetch
+```
+</details>
 
-  * ### Расхождение в истории
-  
-       * git pull --rebase + git push ИЛИ git pull + git push
+<details>
+ <summary>git fetch и git merge</summary>
+<br>
 
-  * ### Заблокированная ветвь main
-  
-       * git checkout -b <ветка И коммит> + git push
+```
+git pull
+```
+</details>
+
+<details>
+ <summary>Коллективная работа</summary>
+<br>
+
+```
+git fakeTeamwork
+```
+</details>
+
+<details>
+ <summary>Загрузка изменений в удалённый репозиторий</summary>
+<br>
+
+```
+git push
+```
+</details>
+
+<details>
+ <summary>Расхождение в истории</summary>
+<br>
+
+```
+git pull --rebase
+git push
+```
+```
+git pull
+git push
+```
+</details>
+
+<details>
+ <summary>Заблокированная ветвь main</summary>
+<br>
+
+```
+git checkout -b <ветка И коммит>
+git push
+```
+</details>
 
 <br>
 
 ## [Продвинутое использование](https://github.com/winnca/git/tree/6_pro_pull_push)
 
-  * ### Push мастер
-  
-       * git fetch + git rebase <ветка куда И ветка-копия>
+<details>
+ <summary>Push мастер</summary>
+<br>
 
-  * ### Слияние с удаённым репозиторием
-  
-       * git pull + git merge
+```
+git fetch
+git rebase <ветка куда И ветка-копия>
+```
+</details>
 
-  * ### Слежка за удалённым репозиторием
-  
-       * git checkout -b <ветка> o/main (+ git pull) + git push ИЛИ git branch -u o/main <ветка> (+ git pull) + git push
+<details>
+ <summary>Слияние с удаённым репозиторием</summary>
+<br>
 
-  * ### Аргументы для Push
-  
-       * git push <удалённый_репозиторий> <целевая_ветка> ИЛИ git push origin <источник>:<получатель>
+```
+git pull
+git merge
+```
+</details>
 
-  * ### Аргументы для Fetch
-  
-       * git fetch <удалённая ветка ИЛИ коммит>:<ветка локального репозитория> ИЛИ git fetch <удалённая ветка ИЛИ коммит>
-  
-  * ### Не указываем источник
-  
-       * git push origin  :<ветка> = удалить ИЛИ git fetch origin  :<ветка> = добавить
+<details>
+ <summary>Слежка за удалённым репозиторием</summary>
+<br>
 
-  * ### Аргументы для Pull
-       
-      * git pull <удалённая ветка ИЛИ коммит>:<ветка локального репозитория> ИЛИ git pull <удалённая ветка ИЛИ коммит>
+```
+git checkout -b <ветка> o/main
+git pull
+git push
+```
+```
+git checkout -b <ветка> o/main
+git push
+```
+```
+git branch -u o/main <ветка>
+git pull
+git push
+```
+```
+git branch -u o/main <ветка>
+git push
+```
+</details>
+
+<details>
+ <summary>Аргументы для Push</summary>
+<br>
+
+```
+git push <удалённый_репозиторий> <целевая_ветка>
+```
+```
+git push origin <источник>:<получатель>
+```
+</details>
+
+<details>
+ <summary>Аргументы для Fetch</summary>
+<br>
+
+```
+git fetch <удалённая ветка ИЛИ коммит>:<ветка локального репозитория>
+```
+```
+git fetch <удалённая ветка ИЛИ коммит>
+```
+</details>
+
+<details>
+ <summary>Не указываем источник</summary>
+<br>
+
+удалить
+```
+git push origin  :<ветка>
+```
+добавить
+```
+git fetch origin  :<ветка>
+```
+</details>
+
+<details>
+ <summary>Аргументы для Pull</summary>
+<br>
+
+```
+git pull <удалённая ветка ИЛИ коммит>:<ветка локального репозитория>
+```
+```
+git pull <удалённая ветка ИЛИ коммит>
+```
+</details>

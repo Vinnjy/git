@@ -143,3 +143,137 @@ git rebase -i HEAD~4
 <img width="890" height="534" alt="image" src="https://github.com/user-attachments/assets/a635ea21-6709-4a97-a460-cea3f3f99fb8" />
 
 <img width="856" height="648" alt="image" src="https://github.com/user-attachments/assets/75e9977a-29a3-416c-aa40-e53790179035" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title12">Теги</a>
+
+Ветки ***просто двигать туда-сюда*** и они ***часто ссылаются на разные коммиты как на изменения данных в ветке***. 
+
+* Ветки ***просто изменить***, ***часто временны***, ***постоянно меняют своё состояние***.
+
+В таком случае, где взять постоянную ссылку на момент в истории изменений? Для таких вещей, как релиз и большие слияния, нужно нечто более постоянное, чем ветка.
+
+* Git предоставляет нам **теги**.
+
+* Основная задача – ***ссылаться постоянно на конкретный коммит***.
+
+* После создания ***никогда не сменят своего положения***, так что можно с лёгкостью сделать checkout конкретного момента в истории изменений.
+
+### Пример.
+
+Создадим тег на C1, который будет нашей версией 1.
+
+<img width="134" height="333" alt="image" src="https://github.com/user-attachments/assets/6ee002ed-9798-4a31-a589-b4c7d7a071ad" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git tag v1 C1
+```
+Результат:
+
+<img width="130" height="324" alt="image" src="https://github.com/user-attachments/assets/2e819ba4-cccb-42e1-87c0-fe7a435c57da" />
+
+* **Тег v1** = ссылается на C1 явным образом.
+
+* Если конкретный коммит не указан, гит пометит тегом HEAD.
+
+### Пример.
+
+Дано:
+
+<img width="678" height="415" alt="image" src="https://github.com/user-attachments/assets/25b3979a-9f8c-4d93-b02f-be995a80e0f1" />
+
+1. Создайте теги так, как показано на визуализации, и потом перейди на тег v1. Обрати внимание, что ты перейдёте в состояние detached HEAD, так как нельзя сделать коммит прямо в тег v1.
+
+<img width="270" height="625" alt="image" src="https://github.com/user-attachments/assets/197116fc-177c-4aff-9572-0b895886ee2b" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git checkout C2
+git tag v1 C2
+git tag v0 C1
+```
+Результат:
+
+<img width="1014" height="404" alt="image" src="https://github.com/user-attachments/assets/284c83d4-4f79-4844-a69b-3d8b11983150" />
+
+<br>
+
+<br>
+
+<br>
+
+## <a id ="title13">Описание тегов</a>
+
+Теги являются прекрасными ориентирами в истории изменений, поэтому в git есть команда, которая показывает, как далеко текущее состояние от ближайшего тега. И эта команда называется git describe
+
+Git describe помогает сориентироваться после отката на много коммитов по истории изменений. Такое может случиться, когда вы сделали git bisect или если вы недавно вернулись из отпуска.
+```
+git describe <ref>
+```
+* **ref** — это что-либо, что ***указывает на конкретный коммит***. Если не указать ref, то git будет считать, что указано текущее положение (HEAD).
+
+Вывод команды выглядит примерно так:
+```
+<tag>-<numCommits>-g<hash>
+```
+* **tag** – ***ближайший тег в истории изменений***. 
+
+* **numCommits** – ***на сколько далеко мы от этого тега***.
+
+* **hash** – ***хеш коммита, который описывается***.
+
+### Пример.
+
+<img width="229" height="360" alt="image" src="https://github.com/user-attachments/assets/de99ffad-b680-4930-a42f-da73800e1607" />
+
+### Решение.
+
+1. Пропишем команду:
+```
+git tag v2 C3
+```
+Результат:
+
+<img width="249" height="353" alt="image" src="https://github.com/user-attachments/assets/6187768c-108b-475b-8fcf-75ca2d1afa9f" />
+
+* git describe main выведет:
+
+  * v1-2-gC2
+
+* git describe side выведет:
+
+  * v2-1-gC4
+
+### Пример.
+
+Дано:
+
+<img width="675" height="565" alt="image" src="https://github.com/user-attachments/assets/4fdbca82-3d5f-4e1e-8cbe-7c321cbbe886" />
+
+1. Нужно получить визулизацию, как на картинке.
+
+<img width="278" height="660" alt="image" src="https://github.com/user-attachments/assets/8def800a-8b99-450a-a3aa-749df5ce52cc" />
+
+### Решение.
+
+1. Пропишем команды:
+```
+git commit
+git describe main
+git describe bugFix
+```
+Результат:
+
+<img width="374" height="66" alt="image" src="https://github.com/user-attachments/assets/059e9782-2568-4022-b806-e5ce43218cad" />
+
+<img width="376" height="54" alt="image" src="https://github.com/user-attachments/assets/fe55c42e-afe8-4064-8472-669ebcd6b5da" />
